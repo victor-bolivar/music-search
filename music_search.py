@@ -1,6 +1,18 @@
 import requests
 import json
+import time
 
+# retrieves related songs sorted by ratings/popularity
+
+def timer(function):
+	def wrapped(*args):
+		start_time = time.time()
+		returned_value = function()
+		print('function : ({}) , execution time : {}s' .format(function.__name__, time.time()-start_time))
+		return returned_value
+	return wrapped
+
+@timer
 class ItunesInformation():
 	def get_data(self, song):
 		base_url = 'https://itunes.apple.com/search?'
