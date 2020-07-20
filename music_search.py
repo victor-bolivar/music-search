@@ -5,9 +5,9 @@ import time
 # retrieves related songs sorted by ratings/popularity
 
 def timer(function):
-	def wrapped(*args):
+	def wrapped(*a, **kw):
 		start_time = time.time()
-		returned_value = function()
+		returned_value = function(*a, **kw)
 		print('function : ({}) , execution time : {}s' .format(function.__name__, time.time()-start_time))
 		return returned_value
 	return wrapped
