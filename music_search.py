@@ -12,8 +12,10 @@ def timer(function):
 		return returned_value
 	return wrapped
 
-@timer
+
 class ItunesInformation():
+
+	@timer
 	def get_data(self, song):
 		base_url = 'https://itunes.apple.com/search?'
 		parameters = {}
